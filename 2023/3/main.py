@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 #my_file = open("sample.txt", "r") 
 #my_file = open("sample2.txt", "r") 
 my_file = open("input.txt", "r")
@@ -33,8 +36,8 @@ def check_symbol(x,y,input_val):
     for x1 in range(x-1,x+2,1):
         for y1 in range(y-1,y+2,1):
             if x1 >= 0 and y1 >= 0 and x1 < len(input_val) and y1 < len(input_val[0]):
-                print(x1,y1)
-                print("checking if ",x1,y1,input_val[x1][y1]," is part of ",symbols)
+                #print(x1,y1)
+                #print("checking if ",x1,y1,input_val[x1][y1]," is part of ",symbols)
                 if input_val[x1][y1] not in symbols:
                     #print("Is Valid Record")
                     return True
@@ -79,3 +82,5 @@ part_1()
 print("Part 1:",sum(answers))
 part_2()
 print("Part 2:",sum(part_2_ans))
+
+print("--- %s seconds ---" % (time.time() - start_time))
